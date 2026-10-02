@@ -12,9 +12,9 @@ frozen landscapes become detailed, navigable 3D environments in NVIDIA Isaac Sim
 natural terrain, real vegetation, physical materials, ground collision and sensor
 captures. Minecraft supplies the geography. IsaacMin brings it into robotics.
 
-| Forest valley · Isaac Sim | Jungle rivers · Isaac Sim |
+| Snowy hillside · Isaac Sim | River reflections · Isaac Sim |
 | --- | --- |
-| ![Actual Isaac Sim forest ground view](docs/media/forest-ground.png) | ![Actual Isaac Sim jungle ground view](docs/media/jungle-ground.png) |
+| ![Snowy hillside and trees rendered in Isaac Sim](docs/media/mountain-slope.png) | ![Riverbank and water reflections rendered in Isaac Sim](docs/media/riverbank.png) |
 
 ## An agent that does the work
 

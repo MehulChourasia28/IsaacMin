@@ -2,18 +2,22 @@
   "scope": "Selected actual demo images; no synthetic rendering or image enhancement",
   "images": [
     {
-      "file": "forest-ground.png",
-      "source": "artifacts/demo/jobs/job_156c152cf9664684a40ffee82d9f1071/build/assembled/preview/rgb_00000.png",
-      "sha256": "2be5a5d2dfbae301cb5b3b89ecc177d45156d57012fb350cad72d75eb417bb56",
-      "description": "Actual Isaac Sim ground capture: Forest valley",
-      "processing": "none; original bytes"
+      "file": "mountain-slope.png",
+      "source": "artifacts/development/surface_navigation_20261001/pine_alpha_comparison_4/preview/rgb_00000.png",
+      "sha256": "2211bfd1af8c708841962be635645c76e93169f8cc31920fb43bfb77543e785c",
+      "description": "Actual Isaac Sim snowy hillside capture; original recorded version of the viewpoint selected by the user",
+      "processing": "none; original bytes",
+      "native_receipt": "artifacts/development/surface_navigation_20261001/pine_alpha_comparison_4/preview/preview_result.json",
+      "scene_sha256": "2249678c841104cabebaa62e7eef2331b7440c418e09136047e1b864d7c2be2d"
     },
     {
-      "file": "jungle-ground.png",
-      "source": "artifacts/demo/jobs/job_dbc17a079cb748b0a2990553a81b72b4/build/assembled/preview/rgb_00002.png",
-      "sha256": "fc10335edb03a37acdd29e66b27da6ed459da63ff1f1b9104df09144065d0ad7",
-      "description": "Actual Isaac Sim ground capture: Jungle rivers",
-      "processing": "none; original bytes"
+      "file": "riverbank.png",
+      "source": "artifacts/demo/jobs/job_dbc17a079cb748b0a2990553a81b72b4/build/assembled/preview/rgb_00004.png",
+      "sha256": "4bc5934ad522189126dd80cd6276086ee223220753f27a009483b90b97490ba8",
+      "description": "Actual Isaac Sim riverbank capture from the Jungle rivers conversion",
+      "processing": "none; original bytes",
+      "native_receipt": "artifacts/demo/jobs/job_dbc17a079cb748b0a2990553a81b72b4/build/assembled/preview/preview_result.json",
+      "scene_sha256": "d442d2183825b7015ed0d987770437d6b0273ed2cae2ee7fc4f2102ab166d6e8"
     },
     {
       "file": "world-comparison.png",
