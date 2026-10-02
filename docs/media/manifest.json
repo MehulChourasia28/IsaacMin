@@ -20,11 +20,25 @@
       "scene_sha256": "d442d2183825b7015ed0d987770437d6b0273ed2cae2ee7fc4f2102ab166d6e8"
     },
     {
-      "file": "world-comparison.png",
-      "source": "artifacts/demo/saved_comparison/isaacmin1_aerial.png",
-      "sha256": "02ca170aefdd92df26aed4ed04487941b90b58134dd5fae95966c9b994f027d1",
-      "description": "Actual browser screenshot: matching Minecraft source and Isaac result, different camera angles",
-      "processing": "none; original bytes"
+      "file": "studio-presets.png",
+      "source": "artifacts/demo/submission_user_screenshots/studio-presets.png",
+      "sha256": "2c33da755638f1437c5335fc06cabc15c57b7c78706f7c40e0b37b729248d292",
+      "description": "User-provided screenshot: the four Minecraft presets in World Studio",
+      "processing": "none; original user-supplied screenshot bytes"
+    },
+    {
+      "file": "studio-aerial-comparison.png",
+      "source": "artifacts/demo/submission_user_screenshots/studio-aerial-comparison.png",
+      "sha256": "cfe6f22c75d7ad7ba8ef6d9487635aab8111e9e35aa2b4e7d67e8eb0e78792ac",
+      "description": "User-provided screenshot: Minecraft source and an aerial Isaac view side by side",
+      "processing": "none; original user-supplied screenshot bytes"
+    },
+    {
+      "file": "studio-river-comparison.png",
+      "source": "artifacts/demo/submission_user_screenshots/studio-river-comparison.png",
+      "sha256": "0f2e7596fe1f0b0b89eb4c2445611edc5841df4e9d25fccf162a7a0fd64e7b7c",
+      "description": "User-provided screenshot: Minecraft source and an Isaac riverbank view side by side",
+      "processing": "none; original user-supplied screenshot bytes"
     }
   ]
 }

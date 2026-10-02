@@ -38,7 +38,17 @@ Choose from four Minecraft presets, watch the world take shape, compare Minecraf
 and Isaac side by side, then download the portable USD world. Request more ground
 or aerial views whenever you need them.
 
-![Minecraft and generated Isaac world side by side in the studio](docs/media/world-comparison.png)
+**Choose your landscape.**
+
+![World Studio with Forest valley, Jungle rivers, Badlands and Frozen coast presets](docs/media/studio-presets.png)
+
+**Compare Minecraft and Isaac from above.**
+
+![Minecraft source beside an aerial view of the generated Isaac world](docs/media/studio-aerial-comparison.png)
+
+**Explore the riverbank at ground level.**
+
+![Minecraft source beside the Isaac riverbank with water reflections](docs/media/studio-river-comparison.png)
 
 **Built on DGX Spark / GB10 / Linux ARM64**, with HighMap, Blender, Isaac Sim,
 OpenClaw and NVIDIA-hosted Nemotron. [Setup](docs/SETUP.md) ·
