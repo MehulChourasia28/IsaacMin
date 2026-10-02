@@ -1,0 +1,74 @@
+{
+  "profile": {
+    "allow_silent_quality_reduction": false,
+    "camera": {
+      "design_hz": 30,
+      "exposure_policy": "fixed_per_lighting_condition",
+      "far_m": 5000.0,
+      "height": 720,
+      "height_m": 0.6,
+      "horizontal_fov_degrees": 90,
+      "intrinsics": {
+        "cx": 639.5,
+        "cy": 359.5,
+        "fx": 640.0,
+        "fy": 640.0
+      },
+      "near_m": 0.02,
+      "scout_heights_m": [
+        0.25,
+        0.6,
+        1.5
+      ],
+      "width": 1280
+    },
+    "collision_scope": "terrain_and_cave_support",
+    "context": {
+      "quality_reference": "IsaacMin specification pack revision2",
+      "target": "DGX Spark"
+    },
+    "held_out_seed": 93497,
+    "human_review": "not_requested",
+    "lighting_conditions": [
+      "diffuse",
+      "directional"
+    ],
+    "max_repairs_per_defect_class": 3,
+    "name": "strict",
+    "navigation_stack": "not_run_not_supplied",
+    "priority": "realism",
+    "required_gates": [
+      "Q00",
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10",
+      "Q11",
+      "Q12",
+      "Q13"
+    ],
+    "schema_version": "1.0",
+    "scout_seed": 1729,
+    "thresholds": {
+      "collision_max_m": 0.02,
+      "collision_p999_m": 0.01,
+      "depth_samples_min": 10000,
+      "held_out_fraction_min": 0.25,
+      "lod_silhouette_trigger_px": 1.0,
+      "missing_ground_frames_max": 0,
+      "planted_base_p995_m": 0.02,
+      "seam_gap_max_m": 0.002,
+      "severe_visual_defects_max": 0,
+      "source_samples_min": 1000,
+      "static_views_min": 24,
+      "unique_route_target_m": 1000
+    }
+  },
+  "sha256": "e4132e9086b244618868a0770339f488c1f9fdd76fd04b79698c443052c58b68"
+}

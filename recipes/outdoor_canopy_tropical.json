@@ -1,0 +1,61 @@
+{
+  "qualification": "Native preparation complete; first actual tropical-map renderer check pending",
+  "rules": [
+    {
+      "assets": [
+        {
+          "asset_id": "pine_tree_01",
+          "weight": 0.65
+        },
+        {
+          "asset_id": "pine_sapling_medium",
+          "weight": 0.28
+        },
+        {
+          "asset_id": "pine_sapling_small",
+          "weight": 0.07
+        }
+      ],
+      "name": "pine_taiga",
+      "source_biomes": [
+        "minecraft:old_growth_pine_taiga"
+      ],
+      "source_species": [
+        "spruce"
+      ]
+    },
+    {
+      "assets": [
+        {
+          "asset_id": "fir_tree_01",
+          "weight": 1.0
+        }
+      ],
+      "interpretation": "Original fir crowns interpret Minecraft spruce as conifer woodland; no exact Picea taxonomy claim",
+      "name": "montane_and_boreal_conifer",
+      "source_biomes": [],
+      "source_species": [
+        "spruce"
+      ]
+    },
+    {
+      "assets": [
+        {
+          "asset_id": "jacaranda_tree",
+          "weight": 1.0
+        }
+      ],
+      "interpretation": "Original mature Jacaranda provides tropical/subtropical broadleaf functional canopy; no exact Minecraft species or universal rainforest taxonomy claim",
+      "name": "tropical_broadleaf_original",
+      "source_biomes": [
+        "minecraft:jungle",
+        "minecraft:sparse_jungle",
+        "minecraft:bamboo_jungle"
+      ],
+      "source_species": [
+        "jungle"
+      ]
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.22)
+project(isaacmin_native LANGUAGES C CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(HIGHMAP_ENABLE_MIXBOX_COLOR OFF CACHE BOOL "" FORCE)
+set(HIGHMAP_ENABLE_OPENCL OFF CACHE BOOL "" FORCE)
+set(HIGHMAP_ENABLE_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(HIGHMAP_ENABLE_TESTS OFF CACHE BOOL "" FORCE)
+set(HIGHMAP_ENABLE_BENCHMARKS OFF CACHE BOOL "" FORCE)
+add_subdirectory(../../.tools/src/HighMap highmap)
+# Narrow terrain worker excludes optional Mixbox colour source and linkage.
+# Section removal additionally keeps the scientific executable small.
+target_compile_options(highmap PRIVATE -ffunction-sections -fdata-sections)
+add_executable(isaacmin_highmap highmap_worker.cpp)
+target_link_libraries(isaacmin_highmap PRIVATE highmap)
+target_compile_options(isaacmin_highmap PRIVATE -fno-fast-math)
+target_link_options(isaacmin_highmap PRIVATE -Wl,--gc-sections)

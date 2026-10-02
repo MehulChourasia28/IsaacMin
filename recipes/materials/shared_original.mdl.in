@@ -1,0 +1,43 @@
+mdl 1.7;
+import ::df::*;
+import ::state::*;
+import ::math::*;
+import ::tex::*;
+import ::scene::*;
+struct Sample { color c; float r; float3 delta; };
+Sample scan(uniform texture_2d c,uniform texture_2d r,uniform texture_2d n,uniform float repeat_m,float3 p,float3 gn) = let {
+    float3 s = float3(gn.x < 0.0 ? -1.0 : 1.0,gn.y < 0.0 ? -1.0 : 1.0,gn.z < 0.0 ? -1.0 : 1.0);
+    float3 a0 = math::pow(math::abs(gn),float3(4.0));
+    float3 a = a0/(a0.x+a0.y+a0.z);
+    float2 ux = float2(p.y*s.x,p.z)/repeat_m;
+    float2 uy = float2(-p.x*s.y,p.z)/repeat_m;
+    float2 uz = float2(p.x*s.z,p.y)/repeat_m;
+    color col = tex::lookup_color(c,ux)*a.x + tex::lookup_color(c,uy)*a.y + tex::lookup_color(c,uz)*a.z;
+    float rough = tex::lookup_float(r,ux)*a.x + tex::lookup_float(r,uy)*a.y + tex::lookup_float(r,uz)*a.z;
+    float3 nx = tex::lookup_float3(n,ux)*2.0-1.0;
+    float3 ny = tex::lookup_float3(n,uy)*2.0-1.0;
+    float3 nz = tex::lookup_float3(n,uz)*2.0-1.0;
+    float3 dx = float3(s.x*(nx.z-1.0),s.x*nx.x,nx.y);
+    float3 dy = float3(-s.y*ny.x,s.y*(ny.z-1.0),ny.y);
+    float3 dz = float3(s.z*nz.x,nz.y,s.z*(nz.z-1.0));
+} in Sample(col,rough,dx*a.x+dy*a.y+dz*a.z);
+export material IsaacMinScans() = let {
+    float3 p = state::transform_point(state::coordinate_internal,state::coordinate_world,state::position());
+    float3 gn = math::normalize(state::transform_normal(state::coordinate_internal,state::coordinate_world,state::normal()));
+    float3 w012 = scene::data_lookup_float3("IsaacMinMaterialWeights012",float3(0.0));
+    float w3 = scene::data_lookup_float("IsaacMinMaterialWeight3",0.0);
+    Sample s0 = scan(texture_2d("@@0_base_color@@", tex::gamma_srgb), texture_2d("@@0_roughness@@", tex::gamma_linear), texture_2d("@@0_normal@@", tex::gamma_linear), @@0_repeat_m@@, p, gn);
+    Sample s1 = scan(texture_2d("@@1_base_color@@", tex::gamma_srgb), texture_2d("@@1_roughness@@", tex::gamma_linear), texture_2d("@@1_normal@@", tex::gamma_linear), @@1_repeat_m@@, p, gn);
+    Sample s2 = scan(texture_2d("@@2_base_color@@", tex::gamma_srgb), texture_2d("@@2_roughness@@", tex::gamma_linear), texture_2d("@@2_normal@@", tex::gamma_linear), @@2_repeat_m@@, p, gn);
+    Sample s3 = scan(texture_2d("@@3_base_color@@", tex::gamma_srgb), texture_2d("@@3_roughness@@", tex::gamma_linear), texture_2d("@@3_normal@@", tex::gamma_linear), @@3_repeat_m@@, p, gn);
+    color col = s0.c*w012.x+s1.c*w012.y+s2.c*w012.z+s3.c*w3;
+    float rough = s0.r*w012.x+s1.r*w012.y+s2.r*w012.z+s3.r*w3;
+    float3 normal_world = math::normalize(gn+s0.delta*w012.x+s1.delta*w012.y+s2.delta*w012.z+s3.delta*w3);
+    float3 normal = math::normalize(state::transform_normal(state::coordinate_world,state::coordinate_internal,normal_world));
+} in material(
+    ior:color(1.5),
+    surface:material_surface(scattering:df::fresnel_layer(
+        ior:1.5,weight:1.0,
+        layer:df::microfacet_ggx_smith_bsdf(roughness_u:rough*rough,roughness_v:rough*rough,tint:color(1.0),mode:df::scatter_reflect),
+        base:df::diffuse_reflection_bsdf(tint:col),normal:normal)),
+    geometry:material_geometry(normal:normal));

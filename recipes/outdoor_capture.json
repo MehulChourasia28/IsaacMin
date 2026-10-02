@@ -1,0 +1,62 @@
+{
+  "hdri": "assets/masters/poly_haven/kloofendal_48d_partly_cloudy_puresky/4cce3bc9b9588036541551fe5ae8077af6b37e45/4k/kloofendal_48d_partly_cloudy_puresky_4k.exr",
+  "lighting_parameters": {
+    "asset_id": "kloofendal_48d_partly_cloudy_puresky",
+    "camera_default": {
+      "auto_exposure": false,
+      "ev100": 13.297247562465875,
+      "f_number": 8,
+      "iso": 100,
+      "motion_blur": false,
+      "shutter_seconds": 0.006357840052040775,
+      "white_balance_kelvin": 5500
+    },
+    "daylight_response": {
+      "maximum_lift_ev": 0.45,
+      "open_ev100": 13.747247562465875,
+      "policy": "Modest camera exposure lift in open daylight, fading to zero in deep canopy shade; original HDRI and no postprocessed images",
+      "shade_ev100": 10.0
+    },
+    "dome_exposure": 0,
+    "dome_intensity": 6247.021178031555,
+    "dome_rotation_z_degrees": 0,
+    "dome_texture_format": "latlong",
+    "hdri": "assets/masters/poly_haven/kloofendal_48d_partly_cloudy_puresky/4cce3bc9b9588036541551fe5ae8077af6b37e45/4k/kloofendal_48d_partly_cloudy_puresky_4k.exr",
+    "hdri_sha256": "c63773fc7392f0fcac48edc48e1fd72afd79b1e1033c9618c7b0dc3f19313a16",
+    "intensity_method": "nominal illuminance / measured upper-hemisphere relative luminance integral",
+    "licence": "CC0-1.0",
+    "nominal_upper_hemisphere_illuminance_lux": 30000,
+    "photometric_limit": "Absolute lux assumes renderer interprets unit luminance as cd/m2; target meter/gray-card calibration not_run",
+    "radiance_evidence": {
+      "asset_id": "kloofendal_48d_partly_cloudy_puresky",
+      "brightest_texture_latitude_degrees": 47.8564453125,
+      "brightest_texture_longitude_degrees": 34.2333984375,
+      "channels": 4,
+      "finite_samples": true,
+      "height": 2048,
+      "integral_units": "relative provider luminance times projected steradians; not independently measured lux",
+      "isaac_qualification": "not_run",
+      "luminance_max": 74752.3203125,
+      "luminance_median": 0.2158719301223755,
+      "native_decoder": "Blender 4.5.14 LTS",
+      "orientation_limit": "Texture longitude/latitude, not yet verified target-world sun direction",
+      "path": "assets/masters/poly_haven/kloofendal_48d_partly_cloudy_puresky/4cce3bc9b9588036541551fe5ae8077af6b37e45/4k/kloofendal_48d_partly_cloudy_puresky_4k.exr",
+      "rgb_max": 75359.640625,
+      "sha256": "c63773fc7392f0fcac48edc48e1fd72afd79b1e1033c9618c7b0dc3f19313a16",
+      "upper_hemisphere_luminance_integral": 4.802288826152666,
+      "width": 4096
+    },
+    "source_page": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
+    "sun_intensity": 0,
+    "sun_policy": "HDRI contains its own illumination; no additional distant sun",
+    "target_qualification": "not_run"
+  },
+  "native_denoising": true,
+  "renderer_recipe": "pathtracing_1024",
+  "resolution": [
+    1280,
+    720
+  ],
+  "role": "map-independent outdoor lighting and camera defaults",
+  "schema_version": 1
+}

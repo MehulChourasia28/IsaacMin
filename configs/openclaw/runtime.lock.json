@@ -1,0 +1,18 @@
+{
+  "global_installations_modified": false,
+  "installed_at_utc": "2026-10-02T19:10:05.882950+00:00",
+  "node": {
+    "at_utc": "2026-10-02T18:52:31.929599+00:00",
+    "platform": "linux-arm64",
+    "scope": "Private OpenClaw runtime; system Node unchanged",
+    "sha256": "524659219d6a207a7400f2bde15d19ba060ffbe0d32a8643319ad67e3bb64c78",
+    "url": "https://nodejs.org/dist/v24.16.0/node-v24.16.0-linux-arm64.tar.xz",
+    "version": "v24.16.0"
+  },
+  "openclaw": {
+    "license": "MIT",
+    "npm_lock_sha256": "a0341dac411643ff81b068349da511bc7a22314dd26f256bc958a60ae999b1e4",
+    "source": "https://github.com/openclaw/openclaw",
+    "version": "2026.9.7"
+  }
+}

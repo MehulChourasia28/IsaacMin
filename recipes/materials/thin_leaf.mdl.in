@@ -1,0 +1,21 @@
+mdl 1.7;
+import ::df::*;
+import ::state::*;
+import ::math::*;
+import ::tex::*;
+export material IsaacMinThinLeaf() = let {
+    float3 uvw = state::texture_coordinate(0);
+    float2 uv = float2(uvw.x,uvw.y);
+    color col = tex::lookup_color(texture_2d("@@base_color@@",tex::gamma_srgb),uv);
+    float rough = @@roughness_expression@@;
+    float alpha = @@opacity_expression@@;
+    @@normal_expression@@
+    bsdf tissue = df::normalized_mix(df::bsdf_component[](
+        df::bsdf_component(@@reflection_fraction@@,df::diffuse_reflection_bsdf(tint:col)),
+        df::bsdf_component(@@transmission_fraction@@,df::diffuse_transmission_bsdf(tint:col))));
+    material_surface leaf = material_surface(scattering:df::fresnel_layer(
+        ior:@@ior@@,weight:1.0,
+        layer:df::microfacet_ggx_smith_bsdf(roughness_u:rough*rough,roughness_v:rough*rough,
+            tint:color(1.0),mode:df::scatter_reflect),base:tissue,normal:normal));
+} in material(thin_walled:true,ior:color(@@ior@@),surface:leaf,backface:leaf,
+    geometry:material_geometry(normal:normal,cutout_opacity:alpha>=0.5 ? 1.0 : 0.0));

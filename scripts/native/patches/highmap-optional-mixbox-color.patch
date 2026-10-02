@@ -1,0 +1,61 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 47d4ca2..359b20b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -11,6 +11,7 @@ project(highmap-root LANGUAGES C CXX)
+ # Options
+ # -----------------------------------------------------------------------------
+ 
++option(HIGHMAP_ENABLE_MIXBOX_COLOR "Build optional Mixbox colour mixing functions" ON)
+ option(HIGHMAP_ENABLE_OPENCL "" ON)
+ option(HIGHMAP_ENABLE_LOGS "Enable logging" ON)
+ option(HIGHMAP_ENABLE_EXAMPLES "" ON)
+diff --git a/HighMap/CMakeLists.txt b/HighMap/CMakeLists.txt
+index 1b44a52..f4fb534 100644
+--- a/HighMap/CMakeLists.txt
++++ b/HighMap/CMakeLists.txt
+@@ -9,6 +9,10 @@ project(
+ )
+ 
+ file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
++if(NOT HIGHMAP_ENABLE_MIXBOX_COLOR)
++  list(FILTER SOURCES EXCLUDE REGEX "/colorize/colorize\\.cpp$")
++  list(FILTER SOURCES EXCLUDE REGEX "/virtual_array/colorize_virtual_texture\\.cpp$")
++endif()
+ 
+ add_library(${PROJECT_NAME} STATIC ${SOURCES})
+ 
+@@ -35,7 +39,6 @@ target_link_libraries(
+          hmm::hmm
+          libnpy::libnpy
+          nanoflann::nanoflann
+-         mixbox
+          NoiseLib
+          terrain-descriptors
+          OpenMP::OpenMP_CXX
+@@ -45,6 +48,10 @@ target_link_libraries(
+          ${OpenCL_LIBRARIES}
+   PRIVATE nn-c::nn-c)
+ 
++if(HIGHMAP_ENABLE_MIXBOX_COLOR)
++  target_link_libraries(${PROJECT_NAME} PUBLIC mixbox)
++endif()
++
+ if(HIGHMAP_ENABLE_PCH)
+   message(STATUS "Precompiled Headers (PCH) enabled for target ${PROJECT_NAME}")
+   target_precompile_headers(
+diff --git a/external/CMakeLists.txt b/external/CMakeLists.txt
+index 394a62a..23543b3 100644
+--- a/external/CMakeLists.txt
++++ b/external/CMakeLists.txt
+@@ -4,7 +4,9 @@ include(FastNoiseLite.cmake)
+ include(hmm.cmake)
+ include(libnpy.cmake)
+ include(nn-c.cmake)
+-include(mixbox.cmake)
++if(HIGHMAP_ENABLE_MIXBOX_COLOR)
++  include(mixbox.cmake)
++endif()
+ 
+ add_subdirectory(CLWrapper)
+ add_subdirectory(PointSampler)

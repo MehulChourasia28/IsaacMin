@@ -1,0 +1,15 @@
+diff --git a/source/blender/imbuf/CMakeLists.txt b/source/blender/imbuf/CMakeLists.txt
+index a4faef40..f686a4f3 100644
+--- a/source/blender/imbuf/CMakeLists.txt
++++ b/source/blender/imbuf/CMakeLists.txt
+@@ -13,9 +13,9 @@ set(INC
+ )
+ 
+ set(INC_SYS
++  ${OPENIMAGEIO_INCLUDE_DIRS}
+   ${JPEG_INCLUDE_DIR}
+   ${ZLIB_INCLUDE_DIRS}
+-  ${OPENIMAGEIO_INCLUDE_DIRS}
+ )
+ 
+ set(SRC

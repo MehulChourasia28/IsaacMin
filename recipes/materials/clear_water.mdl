@@ -1,0 +1,10 @@
+mdl 1.7;
+import ::df::*;
+// Original dielectric material, in metres. No bitmap scenery or colour overlay.
+export material IsaacMinClearWater() = material(
+    ior: color(1.333),
+    surface: material_surface(scattering: df::microfacet_ggx_smith_bsdf(
+        roughness_u: 0.0036,
+        roughness_v: 0.0036,
+        tint: color(1.0),
+        mode: df::scatter_reflect_transmit)));

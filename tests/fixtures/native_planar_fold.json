@@ -1,0 +1,5 @@
+{
+  "source": "actual retained native precision failure, local19-vertex23-face patch",
+  "input_evidence": "artifacts/development/native_precision_continuation/attempt_4/patch_ring_1.npz",
+  "scope": "planar retriangulation regression; not renderer evidence"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:isaacmin:artifact:1.0",
+  "title": "IsaacMin worker artifact envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact_id", "kind", "build_id", "scope", "created_at_utc", "producer", "input_hashes", "parameter_hash", "toolchain_hash", "quality_profile_hash", "content_sha256", "files", "coordinate_frame", "status", "diagnostics"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "artifact_id": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "kind": {"type": "string", "minLength": 1},
+    "build_id": {"type": "string", "minLength": 1},
+    "scope": {"type": "object"},
+    "created_at_utc": {"type": "string", "format": "date-time"},
+    "producer": {"type": "object", "required": ["name", "version"]},
+    "input_hashes": {"type": "object"},
+    "parameter_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "toolchain_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "quality_profile_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "files": {"type": "array", "minItems": 1, "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "byte_size", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "byte_size": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "role": {"type": "string", "minLength": 1}
+      }
+    }},
+    "coordinate_frame": {"type": "object"},
+    "status": {"enum": ["staging", "validated", "promoted", "failed", "quarantined"]},
+    "diagnostics": {"type": "array"}
+  }
+}

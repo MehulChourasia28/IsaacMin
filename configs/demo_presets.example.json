@@ -1,0 +1,49 @@
+{
+  "description": "Reference metadata for the four demonstrated presets; native libraries, builds, captures and runtime registrations must be provisioned separately.",
+  "presets": [
+    {
+      "id": "isaacmin",
+      "title": "Forest valley",
+      "subtitle": "Oak woods, meadows & water",
+      "source": "IsaacMin-MinecraftWorld",
+      "center_minecraft_xz": [
+        -1065.38,
+        688.07
+      ],
+      "extent_m": 256
+    },
+    {
+      "id": "isaacmin1",
+      "title": "Jungle rivers",
+      "subtitle": "Tropical canopy & riverbanks",
+      "source": "IsaacMin1",
+      "center_minecraft_xz": [
+        -158.12,
+        165.18
+      ],
+      "extent_m": 256
+    },
+    {
+      "id": "isaacmin2",
+      "title": "Badlands",
+      "subtitle": "Red strata, desert & dry valleys",
+      "source": "IsaacMin2",
+      "center_minecraft_xz": [
+        -5120.6,
+        4158.82
+      ],
+      "extent_m": 256
+    },
+    {
+      "id": "isaacmin3",
+      "title": "Frozen coast",
+      "subtitle": "Ice spires, snow & frozen water",
+      "source": "IsaacMin3",
+      "center_minecraft_xz": [
+        -4297.03,
+        -3046.76
+      ],
+      "extent_m": 256
+    }
+  ]
+}

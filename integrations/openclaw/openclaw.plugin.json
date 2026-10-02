@@ -1,0 +1,7 @@
+{
+  "id": "isaacmin",
+  "name": "IsaacMin bounded world tools",
+  "version": "1.0.0",
+  "contracts": {"tools": ["run_pipeline_stage", "inspect_preset", "list_presets", "inspect_world", "get_capabilities", "list_jobs", "inspect_job", "start_job", "request_views", "control_job"]},
+  "configSchema": {"type": "object", "properties": {"requestFile": {"type": "string"}}, "required": ["requestFile"], "additionalProperties": false}
+}

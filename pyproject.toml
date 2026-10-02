@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "isaacmin"
+version = "0.1.0"
+description = "Evidence-driven Minecraft to Isaac Sim terrain pipeline for DGX Spark"
+requires-python = ">=3.12"
+dependencies = ["numpy==2.2.6", "scipy==1.15.3", "httpx==0.28.1", "PyYAML==6.0.2", "Pillow==11.2.1", "jsonschema==4.23.0", "trimesh==5.1.0", "Rtree==1.4.1", "nbtlib==2.0.4"]
+
+[project.optional-dependencies]
+test = ["pytest==8.3.5", "nbtlib==2.0.4"]
+
+[project.scripts]
+isaacmin = "isaacmin.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
