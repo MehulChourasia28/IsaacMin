@@ -42,6 +42,12 @@ portable ZIP. A separate hosted-agent request rendered an additional Jungle
 aerial without rebuilding the scene. The README images are original captured
 bytes; [their manifest](media/manifest.json) records provenance and hashes.
 
+World extent is configurable from 32 to 2,048 m in 16 m increments. The same
+constructor reconstructs the full region and exports terrain in sections above
+512 m. A 1.536 km-wide scene was constructed, but native rendering hit the
+renderer’s instance capacity. This is a path toward multi-kilometre
+worlds, with memory and rendering work still needed for reliable delivery.
+
 These observations establish the demonstrated workflow, not general robot
 navigation performance. Continuous 1 km delivery, full temporal/contact/realism
 qualification and validation on a supplied navigation stack remain unfinished.

@@ -1,5 +1,5 @@
 {
-  "scope": "Selected actual demo images; no synthetic rendering or image enhancement",
+  "scope": "Selected actual demo images and edited walkthrough video; no synthetic world rendering or image enhancement",
   "images": [
     {
       "file": "mountain-slope.png",
@@ -39,6 +39,25 @@
       "sha256": "0f2e7596fe1f0b0b89eb4c2445611edc5841df4e9d25fccf162a7a0fd64e7b7c",
       "description": "User-provided screenshot: Minecraft source and an Isaac riverbank view side by side",
       "processing": "none; original user-supplied screenshot bytes"
+    }
+  ],
+  "videos": [
+    {
+      "url": "https://github.com/user-attachments/assets/511295b4-9c28-440c-996d-b0efe4071160",
+      "filename": "IsaacMin_Demo_75s.mp4",
+      "source": "artifacts/demo/submission_video_20261002/IsaacMin_Demo_75s.mp4",
+      "sha256": "6399ddcf407d54eb0053d4fec556593c4682aa2561f28c621a8c68110f14ff54",
+      "bytes": 12932042,
+      "duration_seconds": 75,
+      "resolution": [
+        1920,
+        1080
+      ],
+      "description": "Actual IsaacMin UI walkthrough with NVIDIA Ray narration and licensed background music; waiting condensed",
+      "processing": "Original delivered MP4 uploaded unchanged; edited actual browser recordings and native captures, titles, captions and audio mix",
+      "credits": "demo-video.md",
+      "native_job": "job_45b683509379420ca192f239add5eeaf",
+      "local_evidence": "evidence/demo/submission_video_20261002/video.json"
     }
   ]
 }

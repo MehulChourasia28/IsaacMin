@@ -1,5 +1,10 @@
 # IsaacMin
 
+https://github.com/user-attachments/assets/511295b4-9c28-440c-996d-b0efe4071160
+
+*75-second narrated demo — turn on sound. Choose a Minecraft map, watch the agent build, explore the results,
+and download the world. Rendering waits are condensed. [Video credits](docs/media/demo-video.md).*
+
 **Minecraft worlds → realistic Isaac Sim environments. Built by an AI agent.**
 
 Robots learning long-range navigation need far more varied terrain than a handful
@@ -11,6 +16,13 @@ unlimited source of simulation worlds**. Mountains, forests, rivers, deserts and
 frozen landscapes become detailed, navigable 3D environments in NVIDIA Isaac Sim:
 natural terrain, real vegetation, physical materials, ground collision and sensor
 captures. Minecraft supplies the geography. IsaacMin brings it into robotics.
+
+**Designed to extend to multi-kilometre worlds.** The four demo presets showcase
+**256 × 256 m regions**. The same pipeline accepts configurable regions up to
+**2,048 × 2,048 m**, reconstructing the landscape together and exporting larger
+terrain in sections. A **1.536 km-wide scene has already been constructed**;
+reliable Isaac rendering and delivery at that scale still need optimisation and
+validation. The video demonstrates the complete workflow at the 256 m demo scale.
 
 | Snowy hillside · Isaac Sim | River reflections · Isaac Sim |
 | --- | --- |
@@ -55,6 +67,5 @@ OpenClaw and NVIDIA-hosted Nemotron. [Setup](docs/SETUP.md) ·
 [Agent tools](docs/AGENT.md) · [Architecture](docs/ARCHITECTURE.md) ·
 [Asset credits](ASSET_CREDITS.md)
 
-*Hackathon scope: four 256 m demo regions. Continuous kilometre-scale delivery and
-full navigation/realism qualification remain future work. Source saves, native
+*Full navigation/realism qualification remains future work. Source saves, native
 runtimes and large asset libraries are provisioned separately from this source repo.*
